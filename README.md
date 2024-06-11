@@ -2,7 +2,7 @@
 
 # GetPose
 
-ROS2-sovellus mobiilirobotin asentotiedon lukemiseen ja tallentamiseen.
+ROS2-sovellus mobiilirobotin paikka- ja asentotiedon lukemiseen ja tallentamiseen.
 
 ## Sovelluksen toiminta
 
