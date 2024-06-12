@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/813571928.svg)](https://zenodo.org/doi/10.5281/zenodo.11609608)
+
 ![roveri](/images/roveri.svg)
 
 # GetPose
