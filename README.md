@@ -48,12 +48,12 @@ Sijaintitieto julkaistaan noin kerran sekunnissa. Huomaa, että uutta sijaintiti
 
 Mobiilirobotin sijaintitietoa voidaan kysyä myös ilman tätä sovellusta suoraan terminaalista:
 ```
-ros2 topic echo /amcl_pose
+$ ros2 topic echo /amcl_pose
 ```
 
 Tarkemmat tiedot sijaintiedon viestistä saa komennolla:
 ```
-ros2 topic info /amcl_pose --verbose
+$ ros2 topic info /amcl_pose --verbose
 ```
 
 ## Ohjelmistoriippuvuudet
