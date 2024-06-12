@@ -56,6 +56,30 @@ Tarkemmat tiedot sijaintiedon viestistä saa komennolla:
 ros2 topic info /amcl_pose --verbose
 ```
 
+## Ohjelmistoriippuvuudet
+
+Sovellus on kehitty käyttämällä ROS2:n Humble-versiota.
+
+Asenna tarvittavat TurtleBot 4 -ohjelmistopaketit:
+
+[https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_common.html](https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_common.html)
+
+## Sovelluksen asennus
+
+Lataa ensin sovelluksen lähdekoodi ROS2 workspace -kansion *src*-alikansioon.
+```
+$ cd myROS2workspace/src/
+$ git clone https://github.com/SeAMKedu/roveri-getpose.git
+```
+
+Nimeä sovelluksen kansio uudestaan: *roveri-getpose* -> *getpose*.
+
+Siirry ROS2 workspace -kansion juureen ja käännä sovellus *colcon*-työkalulla:
+```
+$ cd ..
+$ colcon build --packages-select getpose
+```
+
 ## Sovelluksen ajaminen
 
 Käynnistä ensimmäisessä terminaalissa ROS2-sovellus, jolla mahdollistaa TurtleBotin ohjaamisen tietokoneen näppäimistöllä. Alla olevan linkin kautta näkee millä näppäimillä TurtleBottia ohjataan.
@@ -63,20 +87,22 @@ Käynnistä ensimmäisessä terminaalissa ROS2-sovellus, jolla mahdollistaa Turt
 [https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html)
 
 ```
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
+$ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 Kopioi *resource* alikansiossa olevat *robolabra.pgm* ja *robolabra.yaml* tiedostot Ubuntun *Home* kansioon. Käynnistä sitten toisessa terminaalissa paikannus ja anna sille parametrina paikannuksessa käytettävän karttapohjan YAML-tiedosto.
 ```
-ros2 launch turtlebot4_navigation localization.launch.py map:=robolabra.yaml
+$ ros2 launch turtlebot4_navigation localization.launch.py map:=robolabra.yaml
 ```
 
 Käynnistä lopuksi tämä sovellus kolmannessa terminaalissa.
 ```
-cd myROS2workspace
-source install/local_setup.bash
-ros2 run getpose main
+$ cd myROS2workspace
+$ source install/local_setup.bash
+$ ros2 run getpose main
 ```
+
+Ohjaa TurtleBottia tietokoneen näppäimistöllä. Kun haluat lopettaa, valitse *getpose*-sovelluksen terminaali ja paina Ctrl+c.
 
 ## Tekijätiedot
 
